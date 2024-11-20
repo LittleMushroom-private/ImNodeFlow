@@ -1,6 +1,6 @@
 #ifndef IM_NODE_FLOW
 #define IM_NODE_FLOW
-#pragma once
+//#pragma once
 
 #include <iostream>
 #include <string>
@@ -372,20 +372,20 @@ namespace ImFlow
          * @brief <BR>Get editor's name
          * @return Const reference to editor's name
          */
-        const std::string& getName() { return m_name; }
+        const std::string& getName() const { return m_name; }
 
         /**
          * @brief <BR>Get editor's position
          * @return Const reference to editor's position in screen coordinates
          */
-        const ImVec2& getPos() { return m_context.origin(); }
+        const ImVec2& getPos() const { return m_context.origin(); }
 
         /**
          * @brief <BR>Get editor's grid scroll
          * @details Scroll is the offset from the origin of the grid, changes while navigating the grid.
          * @return Const reference to editor's grid scroll
          */
-        const ImVec2& getScroll() { return m_context.scroll(); }
+        const ImVec2& getScroll() const { return m_context.scroll(); }
 
         /**
          * @brief <BR>Get editor's list of nodes
@@ -397,13 +397,13 @@ namespace ImFlow
          * @brief <BR>Get nodes count
          * @return Number of nodes present in the editor
          */
-        uint32_t getNodesCount() { return (uint32_t)m_nodes.size(); }
+        uint32_t getNodesCount() const { return (uint32_t)m_nodes.size(); }
 
         /**
          * @brief <BR>Get editor's list of links
          * @return Const reference to editor's internal links list
          */
-        const std::vector<std::weak_ptr<Link>>& getLinks() { return m_links; }
+        const std::vector<std::weak_ptr<Link>>& getLinks() const { return m_links; }
 
         /**
          * @brief <BR>Get zooming viewport
@@ -739,13 +739,13 @@ namespace ImFlow
          * @brief <BR>Get internal input pins list
          * @return Const reference to node's internal list
          */
-        const std::vector<std::shared_ptr<Pin>>& getIns() { return m_ins; }
+        const std::vector<std::shared_ptr<Pin>>& getIns() const { return m_ins; }
 
         /**
          * @brief <BR>Get internal output pins list
          * @return Const reference to node's internal list
          */
-        const std::vector<std::shared_ptr<Pin>>& getOuts() { return m_outs; }
+        const std::vector<std::shared_ptr<Pin>>& getOuts() const { return m_outs; }
 
         /**
          * @brief <BR>Delete itself
@@ -773,19 +773,19 @@ namespace ImFlow
          * @brief <BR>Get node name
          * @return Const reference to the node's name
          */
-        const std::string& getName() { return m_title; }
+        const std::string& getName() const { return m_title; }
 
         /**
          * @brief <BR>Get node size
          * @return Const reference to the node's size
          */
-        const ImVec2& getSize() { return  m_size; }
+        const ImVec2& getSize() const { return  m_size; }
 
         /**
          * @brief <BR>Get node position
          * @return Const reference to the node's position
          */
-        const ImVec2& getPos() { return  m_pos; }
+        const ImVec2& getPos() const { return  m_pos; }
 
         /**
          * @brief <BR>Get grid handler bound to node
@@ -797,7 +797,7 @@ namespace ImFlow
          * @brief <BR>Get node's style
          * @return Shared pointer to the node's style
          */
-        const std::shared_ptr<NodeStyle>& getStyle() { return m_style; }
+        const std::shared_ptr<NodeStyle>& getStyle() const { return m_style; }
 
         /**
          * @brief <BR>Get selected status
@@ -972,19 +972,19 @@ namespace ImFlow
          * @brief <BR>Get pin's name
          * @return Const reference to pin's name
          */
-        const std::string& getName() { return m_name; }
+        const std::string& getName() const { return m_name; }
 
         /**
          * @brief <BR>Get pin's position
          * @return Const reference to pin's position in grid coordinates
          */
-        [[nodiscard]] const ImVec2& getPos() { return m_pos; }
+        [[nodiscard]] const ImVec2& getPos() const { return m_pos; }
 
         /**
          * @brief <BR>Get pin's hit-box size
          * @return Const reference to pin's hit-box size
          */
-        [[nodiscard]] const ImVec2& getSize() { return m_size; }
+        [[nodiscard]] const ImVec2& getSize() const { return m_size; }
 
         /**
          * @brief <BR>Get pin's parent node
@@ -996,7 +996,7 @@ namespace ImFlow
          * @brief <BR>Get pin's type
          * @return The pin type. Either Input or Output
          */
-        PinType getType() { return m_type; }
+        PinType getType() const { return m_type; }
 
         /**
          * @brief <BR>Get pin's data type (aka: \<T>)
